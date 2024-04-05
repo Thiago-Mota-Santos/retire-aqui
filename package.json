@@ -8,5 +8,12 @@
     "copy-env": "cp .env.example .env",
     "eslint": "eslint '**/*.{ts,tsx}' --fix",
     "prettier": "prettier --write '**/*.{ts,tsx}' --print-width 80 --tab-width 2 --single-quote --trailing-comma all --arrow-parens always --semi false"
+  },
+  "dependencies": {
+    "dotenv-safe": "^9.1.0",
+    "moongose": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/dotenv-safe": "^8.1.6"
   }
 }
