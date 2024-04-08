@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import fp from 'fastify-plugin'
 import { Job, Queue, Worker } from 'bullmq'
 import IORedis, { RedisOptions } from 'ioredis'
