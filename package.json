@@ -1,19 +1,32 @@
 {
-  "name": "cryptouse-playground-back",
+  "name": "retire-aqui",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "tsx watch src/index.ts ",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src",
     "copy-env": "cp .env.example .env",
     "eslint": "eslint '**/*.{ts,tsx}' --fix",
-    "prettier": "prettier --write '**/*.{ts,tsx}' --print-width 80 --tab-width 2 --single-quote --trailing-comma all --arrow-parens always --semi false"
+    "prettier": "prettier --write '**/*.{ts,tsx}' --print-width 80 --tab-width 2 --single-quote --trailing-comma all --arrow-parens always --semi false",
+    "fixture:user": "tsx src/modules/user/fixtures/createUser.ts"
   },
   "dependencies": {
+    "@fastify/autoload": "^5.8.0",
+    "@fastify/redis": "^6.1.1",
+    "bcrypt": "^5.1.1",
+    "bullmq": "^5.5.4",
     "dotenv-safe": "^9.1.0",
-    "moongose": "^1.0.0"
+    "fastify": "^4.26.2",
+    "fastify-plugin": "^4.5.1",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.2",
+    "moongose": "^1.0.0",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.2"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/dotenv-safe": "^8.1.6"
   }
 }
