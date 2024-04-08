@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
-import { config } from '../config';
 
-mongoose.connect(config.MONGO_URI as string);
+mongoose.connect(process.env.MONGO_URI as string);
 
 const db = mongoose.connection.useDb(process.env.MONGO_DB as string);
 
