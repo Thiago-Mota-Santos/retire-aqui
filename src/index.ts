@@ -1,7 +1,8 @@
-// index.ts
-
 import fastify from 'fastify';
 import app from './app'; 
+
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const start = async () => {
   try {
