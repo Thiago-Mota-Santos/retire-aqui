@@ -16,7 +16,8 @@ export default fp(async (fastify, opts) => {
   const connection = new IORedis({
     host: process.env.REDIS_HOST,
     port: Number(process.env.REDIS_PORT),
-    password: process.env.REDIS_PASSWORD
+    password: process.env.REDIS_PASSWORD,
+    maxRetriesPerRequest: null
   } as RedisOptions)
 
   const queuesPath = join(__dirname, '../queues')
