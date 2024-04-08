@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import fp from 'fastify-plugin'
 import fastifyRedis, { FastifyRedisPluginOptions, FastifyRedis } from '@fastify/redis'
 
