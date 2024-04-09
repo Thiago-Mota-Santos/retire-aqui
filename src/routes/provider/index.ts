@@ -8,6 +8,7 @@ const properties = {
     deliveryDate: { type: 'string' },
     productSize: { type: 'string', enum: ['small', 'medium', 'large'] },
     address: { type: 'string' },
+    hasRequisitioned: { type: 'boolean' },
     status: { type: 'string', enum: ['pending', 'done'] },
   }
 

@@ -14,6 +14,7 @@ export type Provider = {
   deliveryDate: Date;
   productSize: ProductSize;
   address: string;
+  hasRequisitioned: boolean
   status: 'pending' | 'done';
   createdAt: Date;
   updatedAt: Date;
@@ -24,7 +25,8 @@ const ProviderSchema: Schema<Provider> = new Schema({
     productName: { type: String, required: true },
     whereIsPurchased: { type: String, required: true },
     deliveryDate: { type: Date, required: true },
-    productSize: { type: String , required: true },
+    hasRequisitioned: { type: Boolean, default: false },
+    productSize: { type: String , enum: Object.values(ProductSize), required: true },
     address: { type: String, required: true},
     status: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
