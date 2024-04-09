@@ -1,7 +1,5 @@
-import { FastifyReply, FastifyRequest } from "fastify"
-import { provider } from "./core";
-import { ProviderInput } from "./type";
-import { ProfileModel } from "../../modules/profile/ProfileModel";
+import { FastifyReply } from "fastify"
+
 import { ProviderModel } from "../../modules/provider/providerModel";
 
 async function getAll(reply: FastifyReply) {
