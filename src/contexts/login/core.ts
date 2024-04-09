@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { compareSync } from 'bcrypt';
 import { sign } from 'jsonwebtoken'
 import { LoginInput, LoginResult } from './types';
@@ -14,9 +15,9 @@ export async function login(data: LoginInput): Promise<Result<LoginResult>> {
   if (!match) {
     return { error: 'E-mail or password is incorrect' }
   }
-
+  
   const token = sign({ _id: user._id }, process.env.JWT_SECRET as string, { expiresIn: '1d' });
-
+  
   return {
     data: {
       token,
