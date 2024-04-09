@@ -17,4 +17,4 @@ const ProfileSchema: Schema<Profile> = new Schema({
     collection: 'Profile'
 });
 
-export const ProfileModel = mongoose.model("User", ProfileSchema);
+export const ProfileModel = mongoose.model("Profile", ProfileSchema);
