@@ -1,7 +1,7 @@
 import { FastifyPluginAsync, RouteOptions } from "fastify"
-import handler from "../../contexts/register/handler"
+import handler from "../../contexts/profile/handler"
 
-const register: FastifyPluginAsync = async (fastify): Promise<void> => {
+const profile: FastifyPluginAsync = async (fastify): Promise<void> => {
   const options: RouteOptions = {
     method: 'POST',
     url: '/',
@@ -9,11 +9,10 @@ const register: FastifyPluginAsync = async (fastify): Promise<void> => {
       body: {
         type: 'object',
         properties: {
-          name: { type: 'string' },
-          email: { type: 'string' },
-          password: { type: 'string' },
+          CPF: { type: 'string' },
+          type: { type: 'string', enum: ['provider', 'receiver'] },
         },
-        required: ['name', 'email', 'password'],
+        required: ['CPF', 'type'],
       },
     },
     handler: async function (request, reply) {
@@ -23,4 +22,4 @@ const register: FastifyPluginAsync = async (fastify): Promise<void> => {
   fastify.route(options)
 }
 
-export default register;
+export default profile;
