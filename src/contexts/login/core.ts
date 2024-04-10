@@ -17,7 +17,7 @@ export async function login(data: LoginInput): Promise<Result<LoginResult>> {
   }
   
   const token = sign({ _id: user._id }, process.env.JWT_SECRET as string, { expiresIn: '1d' });
-  
+  console.log(token)
   return {
     data: {
       token,
